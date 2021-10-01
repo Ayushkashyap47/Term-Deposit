@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<body bgcolor=#d4a3ae>
+<center>
+<img src='static\money.jpg' alt="money" width="500" height="200">
+</center>
+<head>
+<style>
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+p {
+  font-size: 5px;
+}
+</style>
+</head>
+<title>Search Page</title>
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Term Deposit Prediction</h1>
+
+    </p style="text-align: left">Job Level : 0='admin', 1='blue-collar',2='entrepreneur',3='housemaid',4='management',5='retired',6='self-employed',7='services',8='student',9='technician',10='unemployed',11='unknown')</p>
+    </p style="text-align: left">Marital Status : 1= Married ,2= Unmarried ,3= Divorced ,4= Unknown</p>
+    </p style="text-align: left">Education Level : 0='basic.4y', 1='basic.6y', 2='basic.9y', 3='high.school', 4='illiterate', 5='professional.course', 6='university.degree' </p>
+    </p style="text-align: left">Default: Has Credit Card in default ? 1= 'Yes', 0= 'No' </p>
+    </p style="text-align: left">Housing: Has Housing Loan? 1= 'Yes', 0= 'No' </p>
+    </p style="text-align: left"Loan: Has Personal Loan? 1= 'Yes', 0 = 'No' </p>
+    </p style="text-align: left">Contact: Contact Communication Type - 1= 'Telephone', 0='Cellular' </p>
+    </p style="text-align: left">Month: Last contact month- 7='nov', 3='jul', 6='may', 4='jun', 1='aug', 5='mar', 8='oct', 0='apr', 9='sep',2='dec' </p>
+    </p style="text-align: left">day_of_week: Last contact day of the week- 4='wed', 1='mon', 3='tue', 0='fri', 2='thu' </p>
+    </p style="text-align: left">duration: Last Contact duration in seconds </p>
+    </p style="text-align: left">campaign: number of contacts performed during this campaign and for this client (includes last contact) </p>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="Job" id="Job Level" placeholder="Job Level">
+            <input type="number" name="Marital_Status" id="Marital_Status" placeholder="Marital_Status">
+            <input type="number" name="Education" id="Education" placeholder="Education">
+            <input type="number" name="default" id="default" placeholder="default">
+            <input type="number" name="Housing" id="Housing" placeholder="Housing">
+            <input type="number" name="Loan" id="Loan"placeholder="Loan" step="any">
+            <input type="number" name="contact" id="contact"placeholder="contact" step="any">
+            <input type="number" name="month" id="month"placeholder="month" step="any">
+            <input type="number" name="day_of_week" id="day_of_week"placeholder="day_of_week" step="any">
+            <input type="number" name="duration" id="duration"placeholder="duration" step="any">
+            <input type="number" name="campaign" id="campaign"placeholder="campaign" step="any">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
